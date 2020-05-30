@@ -10,3 +10,27 @@ You can connect to a existing sqlite3 database or create a new one by using the 
 ```
 conn  = sqlite3.connect("customers")
 ```
+
+
+## Data Types In Sqlite3
+
+Sqlite3 only supports 5 data types. It is easy to remember
+1. NULL 
+2. INTEGER
+3. REAL  (Decimal)
+4. TEXT
+5. BLOB 
+
+```python
+
+c = conn.cursor()
+c.execute("""CREATE TABLE customers (
+    first_name text,
+    last_name text,
+    email text
+)
+""")
+conn.commit()
+```
+
+To run the query you will need to run commit method on the connection.
