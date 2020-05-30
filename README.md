@@ -34,3 +34,14 @@ conn.commit()
 ```
 
 To run the query you will need to run commit method on the connection.
+
+
+## Inserting Data
+
+```python
+c.execute("""INSERT INTO customers 
+    (first_name, last_name, email) 
+    VALUES ("Vijay","S","vijaygenius123@gmail.com")
+""")
+conn.commit()
+```
