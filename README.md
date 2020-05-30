@@ -58,3 +58,18 @@ c.executemany("""INSERT INTO customers VALUES (?,?,?)""",data)
 
 conn.commit()
 ```
+
+## Retreiving Data
+
+```python
+c.execute("""SELECT *  FROM customers""")
+
+print(c.fetchone())
+
+```
+
+There are three methods to fetch the data
+
+1. fetchone() returns one row
+2. fetchmany(x) returns x number of rows
+3. fetchall() returns all the rows
