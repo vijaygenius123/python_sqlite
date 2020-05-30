@@ -18,5 +18,13 @@ c = conn.cursor()
 #    VALUES ("Vijay","S","vijaygenius123@gmail.com")
 #""")
 
+data = [
+    ('Swathi','GV','swathi@gmail.com'),
+    ('John','Doe','john@gmail.com'),
+    ('Jane','Doe','jane@gmail.com')
+]
+
+c.executemany("""INSERT INTO customers VALUES (?,?,?)""",data)
+
 
 conn.commit()

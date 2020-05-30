@@ -45,3 +45,16 @@ c.execute("""INSERT INTO customers
 """)
 conn.commit()
 ```
+
+for bulk insert
+```python
+data = [
+    ('User','1','user1@gmail.com'),
+    ('User','2','user2@gmail.com'),
+    ('User','3','user3gmail.com')
+]
+
+c.executemany("""INSERT INTO customers VALUES (?,?,?)""",data)
+
+conn.commit()
+```
