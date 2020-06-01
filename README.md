@@ -82,3 +82,10 @@ items = c.fetchall()
 for item in items:
     print("First Name:{}\tLast Name:{}\tEmail:{}".format(item[0],item[1],item[2]))
 ```
+
+## Retrieving Row ID
+
+sqlite generates a row ID for every row. It automatically increments on each record inserted
+```python
+c.execute("""SELECT rowid, *  FROM customers""")
+```

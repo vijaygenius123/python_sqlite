@@ -26,13 +26,13 @@ c = conn.cursor()
 
 #c.executemany("""INSERT INTO customers VALUES (?,?,?)""",data)
 
-c.execute("""SELECT *  FROM customers""")
+c.execute("""SELECT rowid, *  FROM customers""")
 
 #print(c.fetchone())
 #print(c.fetchmany(2))
 items = c.fetchall()
 
 for item in items:
-    print("First Name:{}\tLast Name:{}\tEmail:{}".format(item[0],item[1],item[2]))
+    print("Row ID:{}\tFirst Name:{}\tLast Name:{}\tEmail:{}".format(item[0],item[1],item[2],item[3]))
 
 conn.commit()
