@@ -115,7 +115,7 @@ c.execute("""UPDATE customers SET last_name = 'Sundararaman'
 ```
 
 ## Delete Clause
-
+Can be used to delete record(s) based on condition
 
 ```python
 c.execute("""DELETE from customers WHERE rowid = 4""")
