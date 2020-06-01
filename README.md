@@ -73,3 +73,12 @@ There are three methods to fetch the data
 1. fetchone() returns one row
 2. fetchmany(x) returns x number of rows
 3. fetchall() returns all the rows
+
+## Formatting Results
+
+```python
+items = c.fetchall()
+
+for item in items:
+    print("First Name:{}\tLast Name:{}\tEmail:{}".format(item[0],item[1],item[2]))
+```

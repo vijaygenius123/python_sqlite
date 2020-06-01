@@ -28,8 +28,11 @@ c = conn.cursor()
 
 c.execute("""SELECT *  FROM customers""")
 
-print(c.fetchone())
+#print(c.fetchone())
 #print(c.fetchmany(2))
-#print(c.fetchall())
+items = c.fetchall()
+
+for item in items:
+    print("First Name:{}\tLast Name:{}\tEmail:{}".format(item[0],item[1],item[2]))
 
 conn.commit()
