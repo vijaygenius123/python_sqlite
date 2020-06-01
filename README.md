@@ -113,3 +113,10 @@ c.execute("""UPDATE customers SET last_name = 'Sundararaman'
     WHERE rowid = 1
 """)
 ```
+
+## Delete Clause
+
+
+```python
+c.execute("""DELETE from customers WHERE rowid = 4""")
+```

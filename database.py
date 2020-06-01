@@ -26,9 +26,10 @@ c = conn.cursor()
 
 #c.executemany("""INSERT INTO customers VALUES (?,?,?)""",data)
 
-c.execute("""UPDATE customers SET last_name = 'Sundararaman'
-    WHERE rowid = 1
-""")
+#c.execute("""UPDATE customers SET last_name = 'Sundararaman'
+#    WHERE rowid = 1
+#""")
+c.execute("""DELETE from customers WHERE rowid = 4""")
 
 conn.commit()
 
