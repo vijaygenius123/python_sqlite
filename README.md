@@ -89,3 +89,17 @@ sqlite generates a row ID for every row. It automatically increments on each rec
 ```python
 c.execute("""SELECT rowid, *  FROM customers""")
 ```
+
+## Using Where Clause
+
+Where can be used to select specific records by providing the condition. For example the below example we are selecting all customers with last_name as Doe
+
+```python
+c.execute("""SELECT rowid, *  FROM customers WHERE last_name='Doe' """)
+```
+
+In this example below we are selecting all customers with name starting with J
+
+```python
+c.execute("""SELECT rowid, *  FROM customers WHERE first_name LIKE 'J%' """)
+```
