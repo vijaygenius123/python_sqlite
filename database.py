@@ -26,19 +26,19 @@ c = conn.cursor()
 
 #c.executemany("""INSERT INTO customers VALUES (?,?,?)""",data)
 
-c.execute("""SELECT rowid, *  FROM customers WHERE last_name='Doe' """)
+c.execute("""UPDATE customers SET last_name = 'Sundararaman'
+    WHERE rowid = 1
+""")
+
+conn.commit()
 
 #print(c.fetchone())
 #print(c.fetchmany(2))
+
+c.execute("""SELECT rowid, *  FROM customers""")
+
 items = c.fetchall()
 
 for item in items:
     print("Row ID:{}\tFirst Name:{}\tLast Name:{}\tEmail:{}".format(item[0],item[1],item[2],item[3]))
-
-
-c.execute("""SELECT rowid, *  FROM customers WHERE first_name LIKE 'J%' """)
-
-for item in items:
-    print("Row ID:{}\tFirst Name:{}\tLast Name:{}\tEmail:{}".format(item[0],item[1],item[2],item[3]))
-
 conn.commit()

@@ -103,3 +103,13 @@ In this example below we are selecting all customers with name starting with J
 ```python
 c.execute("""SELECT rowid, *  FROM customers WHERE first_name LIKE 'J%' """)
 ```
+
+## Update Clause
+
+To update a specific record / multiple records you can use the update statement like below:
+
+```python
+c.execute("""UPDATE customers SET last_name = 'Sundararaman'
+    WHERE rowid = 1
+""")
+```
